@@ -210,7 +210,7 @@ body{
 }
 @media (max-width: 768px){
   .slide{
-    height: 650px;
+    height: 550px;
   }
   .hero-tittle{
     font-size: 1.1rem;
