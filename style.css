@@ -371,9 +371,12 @@ cursor: pointer;
   grid-template-columns: 1fr;
   gap: 15px;
 }
+.mission-vission p{
+  text-align: left;
+}
 .mission-vission img{
   width: 300px;
-  margin: 10px 60px;
+  margin-left: 50px;
   padding: 20px 0px;
   align-items: center;
   align-content: center;
