@@ -2,6 +2,10 @@ body{
   margin: 0;
   padding-top: 80;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* word-spacing: 4px; */
+}
+p{
+  word-spacing: 5px;
 }
 .header{
   position: fixed;
@@ -208,6 +212,11 @@ body{
   color: #fff;
   margin-bottom: 10px;
 }
+.hero-btn:hover{
+transform: scale(1.05);
+box-shadow: 0 8px 16px #2b24ff;
+cursor: pointer;
+}
 @media (max-width: 768px){
   .slide{
     height: 550px;
@@ -281,6 +290,7 @@ body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   box-shadow: 0.3s ease;
+  color: #0066cc;
 }
 @media (max-width: 768px) {
 .grid-container{
@@ -302,5 +312,68 @@ cursor: pointer;
   margin: 0 auto;
   padding: 20px;
 }
-
+.ul-list{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+@media(max-width: 768px){
+  .ul-list{
+    grid-template-columns: 2fr;
+    gap: 30px;
+    margin: 5px 30px;
+  }
+}
+.about-us{
+  background-color: rgba(255, 255, 255, 0.897);
+  align-content: center;
+  text-align: center;
+  margin: 10px 20px;
+}
+.about-us h1{
+  text-align: left;
+  margin: 20px;
+  color: #0066cc;
+  padding: 8px;
+}
+.about-us h3{
+  padding: 10px;
+  color: #0066ff;
+  text-align: center;
+}
+.about-us p{
+  text-align: left;
+  
+}
+.mission-vission{
+  display: grid;
+  gap: 20px;
+  /* justify-content: center; */
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+.mission-vission img{
+  width: 200px;
+  margin: 10px auto;
+  padding: 30px 0px;
+  border-radius: 50%;
+}
+.mission-vission h2{
+  color: #0066cc;
+}
+@media (max-width: 768px) {
+.mission-vission {
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+}
+.mission-vission img:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
