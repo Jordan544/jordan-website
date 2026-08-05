@@ -1,11 +1,7 @@
 body{
   margin: 0;
-  padding-top: 80;
+  padding-top: 80px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* word-spacing: 4px; */
-}
-p{
-  word-spacing: 5px;
 }
 .header{
   position: fixed;
@@ -19,6 +15,7 @@ p{
   display: flex;
   align-items: center;
   gap: 12px;
+  justify-content: space-evenly;
 }
 .nav-logo{
   width: auto;
@@ -26,21 +23,21 @@ p{
   object-fit: contain;
 }
 .logo{
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   margin: 0;
 }
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 30px 35px;
   background-color: #0066ff;
   color: rgba(255, 255, 255, 0.897);
   position: relative;
 }
 .nav-links{
   display: flex;
-  gap: 1rem;
+  gap: 1.8rem;
   list-style: none;
 }
 .nav-links a{
@@ -48,11 +45,11 @@ p{
   color: rgba(255, 255, 255, 0.897);
   font-size: 1.1rem;
   cursor: pointer;
+  transition: 0.4s ease;
 }
 .nav-links a:hover{
   color: #0a1024;
-  padding: 0;
-  margin-bottom: 0px;
+
 }
 .humberger{
   display: none;
@@ -132,7 +129,6 @@ p{
   overflow: hidden;
   border-radius: 0px;
   position: relative;
-  
 }
 .slider-track{
   display: flex;
@@ -143,6 +139,7 @@ p{
   width: 20%;
   flex-shrink: 0;
   height: 85vh;
+  position: relative;
 }
 .slide img{
   margin-top: 100px;
@@ -151,11 +148,17 @@ p{
   object-fit: cover;
   object-position: center;
   display: block;
-  /* position: absolute; */
+  border-radius: 8px;
+
 }
 @media (max-width: 768px){
   .slide img{
-    height: 400px;
+    width: 100%;
+    object-fit: cover;
+
+  }
+  .slider-container{
+    margin-top: 4.5rem;
   }
 }
 @keyframes slideShow{
@@ -178,6 +181,7 @@ p{
     transform: translateX(0);
   }
 }
+
 .hero-overly{
   position: absolute;
   top: 50%;
@@ -192,12 +196,13 @@ p{
   box-sizing: border-box;
   z-index: 10;
   pointer-events: auto;
+  margin-top: 30px;
 }
 .hero-tittle{
   color: #ffffff;
   font-size: 1.4rem;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; 
+ }
 .hero-subtittle{
   color: #ffffff;
   font-size: 1.8rem;
@@ -225,10 +230,7 @@ cursor: pointer;
     font-size: 1.1rem;
   }
 }
-.stats-section{
-  padding: 0px 20px;
-  background-color: #ffff;
-}
+
 .stats-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -261,8 +263,8 @@ cursor: pointer;
   margin: 0;
   opacity: 0.95;
   letter-spacing: 0.5px;
-}
-@media (max-width: 768px){
+} 
+ @media (max-width: 768px){
   .stats-grid{
     grid-template-columns: 1fr;
     width: 85px;
@@ -272,7 +274,7 @@ cursor: pointer;
 .grid-container{
   display: grid;
   gap: 20px;
-  /* justify-content: center; */
+
   grid-template-columns: repeat(4, 1fr);
   max-width: 1200px;
   margin: 0 auto;
@@ -306,25 +308,55 @@ cursor: pointer;
 .gallery{
   display: grid;
   gap: 20px;
-  /* justify-content: center; */
+
   grid-template-columns: repeat(4, 1fr);
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-.ul-list{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px;
+.list{
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 2px 2px 5px #deebff;
+  border-radius: 8px;
+  padding: 50px;
+  padding-left: 0;
+  margin-top: 40px;
 }
-@media(max-width: 768px){
-  .ul-list{
-    grid-template-columns: 2fr;
-    gap: 30px;
-    margin: 5px 30px;
+.list ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  color: #4f4e4e;
+}
+.vr{
+  border-left: 2px solid #0066ff;
+  padding: 8px 10px;
+  
+}
+@media(max-width: 786px){
+  .list{
+    max-width: 800px;
+    width: 75%;
+  }
+  .list ul{
+    display: block;
+    padding: 10px;
+  }
+  .li-list li{
+    margin: 20px auto;
+    text-align: left;
+  }
+  .vr{
+    display: none;
   }
 }
 .about-us{
@@ -351,7 +383,7 @@ cursor: pointer;
 .mission-vission{
   display: grid;
   gap: 20px;
-  /* justify-content: center; */
+
   grid-template-columns: repeat(4, 1fr);
   max-width: 1200px;
   margin: 30px auto;
@@ -376,7 +408,7 @@ cursor: pointer;
 }
 .mission-vission img{
   width: 300px;
-  margin-left: 50px;
+  margin-left: auto;
   padding: 20px 0px;
   align-items: center;
   align-content: center;
@@ -387,4 +419,3 @@ cursor: pointer;
   transform: scale(1.05);
   cursor: pointer;
 }
-

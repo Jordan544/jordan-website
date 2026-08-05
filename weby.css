@@ -1,0 +1,264 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #cfcfcf;
+}
+
+.container-fluid {
+  position: fixed;
+  width: 100vw;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.wrapper-navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  position: relative;
+  width: 100%;
+}
+
+/* --- Improved Nav Links Desktop Styling --- */
+.nav-links{
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 0;
+  margin: 0 40px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a i {
+  color: #0000ff;
+  transition: transform 0.3s ease;
+}
+
+/* Hover & Active States */
+.nav-links a:hover, 
+.nav-links a.Active {
+  color: #0000ff;
+  background-color: rgba(0, 0, 255, 0.06);
+}
+
+.nav-links a:hover i {
+  transform: translateY(-2px);
+}
+/* ----------------------------------------- */
+
+.nav-brand h4{
+  color: #0000ff;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+.nav-brand span{
+  color: #ffa500;
+}
+.nav-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand img{
+  max-width: 45px;
+  max-height: 45px;
+}
+
+.humberger{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+}
+.humberger .bar{
+  width: 100%;
+  height: 3px;
+  background-color: #0000ff;
+  border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* --- Carousel Sizing & Layout Styling --- */
+.main-content-wrapper {
+  padding: 20px;
+  max-width: 90%;
+  width: 100%;
+  margin: 50px auto;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  gap: 20px;
+  padding: 20px;
+}
+
+.fixed-welcome-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.fixed-welcome-box h1 {
+  font-size: 2rem;
+  color: #0000ff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.fixed-welcome-box h1 span {
+  color: #ffa500;
+}
+
+.fixed-welcome-box p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.fixed-welcome-box .btn-primary-custom {
+  background-color: #0000ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.fixed-welcome-box .btn-primary-custom:hover {
+  background-color: #0000cc;
+  color: #fff;
+}
+
+.carousel-container-custom {
+  flex: 1;
+  max-width: 550px; /* Restricts carousel width so it looks neat and smaller */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 320px; /* Forces a controlled, smaller height */
+  object-fit: cover; /* Ensures images crop nicely without distorting */
+}
+
+/* Responsive adjustments for mobile */
+@media(max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  .carousel-container-custom {
+    max-width: 100%;
+    width: 100%;
+  }
+  .carousel-item img {
+    height: 240px;
+  }
+}
+
+@media(max-width: 480px){
+  .nav-brand h4{
+    font-size: 0.95rem;
+  }
+  .wrapper-navbar {
+    padding: 10px 15px;
+  }
+  .fixed-welcome-box h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- Responsive Mobile Dropdown Enhancements --- */
+@media(max-width: 768px){
+  .humberger{
+    display: flex;
+    margin-right: 20px;
+  }
+  .nav-links{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    list-style: none;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 15px 20px;
+    z-index: 8;
+    display: none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid #eee;
+  }
+  .nav-links li{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .nav-links.active{
+    display: flex;
+  }
+  .nav-links li a{
+    color: #333;
+    font-size: 1.05rem;
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+  .nav-links li a:hover,
+  .nav-links li a.Active {
+    background-color: rgba(0, 0, 255, 0.08);
+    color: #0000ff;
+  }
+  .humberger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .humberger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .humberger.active .bar:nth-child(3){
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
