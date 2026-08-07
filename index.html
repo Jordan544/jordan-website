@@ -3,143 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>St-joseph cenenary ss ndeeba</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/logo.png" type="image/png">
-  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <title>St. Joseph Centenary SS Ndeeba</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="website.js" defer></script>
-</head>
+  <link rel="stylesheet" href="weby.css">
 
+</head>
 <body>
-  <div class="header">
-    <nav class="navbar">
-      <div class="nav-brand">
-        <img src="images/logo.png" alt="St. joseph Centenary SS Ndeeba" class="nav-logo">
-        <div class="logo"><h3>St.Joseph Centenary SS Ndeeba</h3></div>
+
+  <div class="container-fluid">
+    <nav class="wrapper-navbar">
+      <div class="navbar p-0">
+        <div class="nav-brand">
+          <img src="images/logo.png" alt="">
+          <h4>St.Joseph Centenary <span>Ndeeba</span></h4>
+        </div>
       </div>
       <button class="humberger" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
+
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#about-us">About</a></li>
-        <li><a href="#">Academics</a></li>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="Active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+        <li><a href="#"><i class="fa-solid fa-user-plus"></i> Register</a></li>
       </ul>
     </nav>
   </div>
-  
-  <div class="slider-container">
-    <div class="slider-track">
-      <div class="slide">
-        <img src="images/7.png" alt="">
+
+  <!-- Main Content Wrapper with Fixed Welcome Text & Smaller Carousel Side-by-Side -->
+  <div class="main-content-wrapper">
+    <div class="hero-section">
+      
+      <!-- Fixed Welcome Text Box (Does not change on slide change) -->
+      <div class="fixed-welcome-box">
+        <h1>Welcome to <span>St. Joseph Centenary</span></h1>
+        <p>Empowering minds and shaping future leaders through excellence in education, discipline, and core values. Explore our programs and join our vibrant community today.</p>
+        <a href="#" class="btn-primary-custom"><i class="fa-solid fa-user-plus"></i> Register Now</a>
       </div>
-      <div class="slide">
-        <img src="images/5.png" alt="">
+
+      <!-- Smaller Styled Carousel -->
+      <div class="carousel-container-custom">
+        <div id="carouselExampleAutoplaying" class="carousel slide shadow-sm" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/10.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="images/2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="images/3.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="slide">
-        <img src="images/13.png" alt="">
-      </div>
-      <div class="slide">
-        <img src="images/6.png" alt="">
-      </div>
-      <div class="slide">
-        <img src="images/10.png" alt="">
-      </div>   
-    </div>
-    <div class="hero-overly">
-      <div class="hero-tittle">
-        <h3>Welcome to <br>ST. JOSEPH CENTENARY SS NDEEBA</h3>
-        <p class="hero-subtittle">Work Hard For Progress</p>
-        <button class="hero-btn">Apply Now</button>
-        </div>   
+
     </div>
   </div>
 
-  <section class="gid-tile">
+  <section class="grid-wrapper">
     <div class="grid-container">
-      <div class="tiles">
-        <h3><i class="fa-solid fa-user"></i> 569</h3>
+      <div class="grid-tiles">
+        <h3><i class="fa-solid fa-user"></i>  500+</h3>
         <p>Students Enrolled</p>
       </div>
-      <div class="tiles">
-        <h3><i class="fa-solid fa-handshake"></i> 20</h3>
+      <div class="grid-tiles">
+        <h3><i class="fa-solid fa-trophy"></i></i>  10</h3>
         <p>Years of Excellence</p>
       </div>
-      <div class="tiles">
-        <h3><i class="fa-solid fa-user-graduate"></i> 120</h3>
+      <div class="grid-tiles">
+        <h3><i class="fa-solid fa-user-graduate"></i>  50</h3>
         <p>Qualified Teachers</p>
       </div>
-      <div class="tiles">
-        <h3><i class="fa-solid fa-house"></i> 10</h3>
-        <p>Branches</p>
+      <div class="grid-tiles">
+        <h3><i class="fa-solid fa-graduation-cap"></i>  A+</h3>
+        <p>Academic Excellence</p>
       </div>
     </div>
   </section>
 
-  <div class="list">
-    <ul>
-      <div class="li-list">
-        <li>Well-equipped Computer Labaratories</li>
+  <section class="welcome-wrapper">
+    <div class="wlcm-container">
+      <div class="wlcm-img">
+        <img src="images/2.png" alt="Welcome Image">
       </div>
-      <div class="vr"></div>
-
-      <div class="li-list">
-        <li>Experience Teachers</li>
+      <div class="hr"></div>
+      <div class="wlcm-text">
+        <h2>Welcome to <br><span>St. Joseph Centenary SS Ndeeba</span></h2>
+        <p>Join our vibrant community and experience excellence in education.
+        We are committed to nurturing young minds, fostering creativity, and preparing students for a successful future. Explore our programs and discover the opportunities that await you at <strong>St. Joseph Centenary SS Ndeeba</strong>.
+        </p>
+        <button class="wlcm-btn"><i class="fa-solid fa-lightbulb"></i>  Learn More</button>
       </div>
-      <div class="vr"></div>
+    </div>
+  </section>
 
-      <div class="li-list">
-        <li>Conducive Learning Environment</li>
+  <section class="intro-wrapper">
+    <div class="intro-container">
+      <ul class="intro-tiles">
+        <li class="intro-tile">
+          <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+          <p>To provide quality education that fosters intellectual growth and moral development.</p>
+        </li>
+        <li class="intro-tile">
+          <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
+          <p>To be a leading educational institution that empowers students to become future leaders.</p>
+        </li>
+        <li class="intro-tile">
+          <h3><i class="fa-solid fa-heart"></i> Our Values</h3>
+          <p>Integrity, Excellence, Respect, and Community.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about-page Active" id="about">
+    <div class="about-wrapper">
+      <h2>About Us</h2>
+      <hr>
+      <p>Welcome to St. Joseph Centenary SS-Ndeeba</p>
+    </div>
+    <div class="about-container">
+      <div class="about-details">
+        <div class="details">
+          <h3>Our Story</h3>
+          <p>St. Joseph Centenary SS Ndeeba has a rich history of providing quality education to students in the region. Our commitment to academic excellence and holistic development has made us a trusted institution for generations.</p>
+          <h3>Our Programs</h3>
+          <p>We offer a wide range of academic programs designed to cater to the diverse needs of our students. From science and technology to arts and humanities, our curriculum is designed to foster critical thinking and creativity.</p>
+          <h3>Our Community</h3>
+          <p>At St. Joseph Centenary SS Ndeeba, we believe in building a strong sense of community among our students, staff, and parents. We encourage collaboration, respect, and active participation in school activities.</p>
+          <h3>Our Facilities</h3>
+          <p>Our campus is equipped with state-of-the-art facilities, including modern classrooms,
+          <h3>Our Leadership</h3>
+          <p>Our leadership team is dedicated to ensuring that our school remains a place of learning, growth, and opportunity for all students. We are committed to maintaining high standards of education and fostering a positive learning environment.</p>
+          <!-- <div class="extras">
+            <p>Experienced Teachers</p>
+            <p>Science Laboratories</p>
+            <p>Sports & Co-curricular Activities</p>
+            <p>Modern Computer Laboratory</p>
+            <p>Excellent UNEB Performance</p>
+            <p>Safe Learning Environment</p>
+          </div> -->
+        </div>
+        <div class="hr"></div>
+        <div class="about-img">
+          <img src="images/3.png" alt="About Image">
+        </div>
       </div>
-      <div class="vr"></div>
+    </div>
+  </section>
 
-      <div class="li-list">
-        <li>Talent development through MDD and Sports</li>
-      </div>
-      <div class="vr"></div>
 
-      <div class="li-list">
-        <li>Outstanding Labaratories for both Arts and Sciences</li>
-      </div>
-    </ul>
-  </div>
-  
-  <!--ABOUT US PAGE-->
-  <div class="about-us">
-    <h1>
-      ABOUT US
-    </h1><hr>
-    <h3>ST. JOSEPH CENTENARY SS-NDEEBA</h3>
-    <p class="about">
-      St. Joseph Centenary Secondary School Ndeeba is a catholic funded school which focuses on bringing up God Fearing, intelligent, and self esteemed students in the society through this we nurture academic excellence, discipline, Leadership and Talented students who are responsible and capable citizens. 
-      We provide a conducive environment, have supportive teachers who are qualified , have a well equipped library and Labaratory where all practical studies are conducted. <br>
-      Our school prepares students to become responsible citizens capable of competing globally.
-    </p>
-    <p>We provide a conducive learning environment supported by qualified teachers, modern ICT laboratories, a well-equipped library and various co-curricular activities that promote holistic development.</p>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const humberger = document.querySelector('.humberger');
+    const navLinks = document.querySelector('.nav-links');
 
-  <div class="mission-vission">
-    <div class="vision">
-      <h2>OUR VISION</h2>
-      <p>To be a leading center of educational excellence that empowers students to innovate, lead, and positively impact a rapidly changing global society.</p>
-  </div>
-  <div class="vision-image">
-    <img src="images/7.png" alt="">
-  </div>
-  <div class="mission">
-    <h2>OUR MISSION</h2>
-    <p>To produce higly intelligent student capable of proper decision making towards generally occuring problems in the modern world.</p>
-  </div>
-  <div class="mission-image">
-    <img src="images/13.png" alt="">
-  </div>
-  </div>
-
+    humberger.addEventListener('click', ()=>{
+      humberger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
