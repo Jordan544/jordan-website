@@ -505,3 +505,45 @@ body{
 
   }
 }
+.about-page{
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px 35px;
+}
+.about-wrapper{
+  width: 100%;
+  color: #0000ff;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.about-wrapper h2{
+  font-size: 2.3rem;
+  color: #0000ff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.about-wrapper p{
+  color: #555;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+.about-container{
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+}
+.about-details{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  gap: 20px;
+}
+.about-img img{
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+}
+
