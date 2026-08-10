@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <link rel="stylesheet" href="weby.css">
+
 </head>
 <body>
 
@@ -27,11 +28,10 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="#about" class="nav-item"><i class="fa-solid fa-circle-info"></i> About</a></li>
         <li><a href="#academics" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academics</a></li>
         <li><a href="#contact" class="nav-item"><i class="fa-solid fa-address-book"></i> Contact</a></li>
-        <li><a href="#contact" class="btn btn-primary btn-sm text-white px-3 py-2"><i class="fa-solid fa-user-plus text-white"></i> Register</a></li>
       </ul>
     </nav>
   </div>
@@ -319,7 +319,7 @@
 
     <div class="footer-bottom">
       <p>&copy; 2026 St. Joseph Centenary SS Ndeeba. All Rights Reserved.</p>
-      <p>Designed with Excellence &amp; Dedication | js.dev</p>
+      <p>Designed with Excellence &amp; Dedication</p>
     </div>
   </footer>
 
@@ -329,9 +329,19 @@
     const humberger = document.querySelector('.humberger');
     const navLinks = document.querySelector('.nav-links');
 
-    humberger.addEventListener('click', () => {
+    // Toggle menu on hamburger click
+    humberger.addEventListener('click', (e) => {
+      e.stopPropagation();
       humberger.classList.toggle('active');
       navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when tapping anywhere outside the menu
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !humberger.contains(e.target)) {
+        humberger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
     });
 
     // Close mobile menu when a nav link is clicked
@@ -350,7 +360,6 @@
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (pageYOffset >= (sectionTop - 120)) {
           current = section.getAttribute('id');
         }
