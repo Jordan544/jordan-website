@@ -4,20 +4,884 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>St. Joseph Centenary SS Ndeeba</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="weby.css">
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    :root {
+      --primary-blue: #0000ff;
+      --primary-accent: #ffa500;
+      --dark-text: #222222;
+      --gray-text: #555555;
+      --light-bg: #f8f9fa;
+      --border-radius: 12px;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: var(--dark-text);
+      padding-top: 80px; /* Prevents content from hiding under fixed navbar */
+      scroll-behavior: smooth;
+    }
+
+    /* --- Navbar Styling --- */
+    .container-fluid-nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .wrapper-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 5%;
+      width: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-brand img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+
+    .nav-brand h4 {
+      color: var(--primary-blue);
+      font-weight: 800;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    .nav-brand span {
+      color: var(--primary-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a i {
+      color: var(--primary-blue);
+      transition: transform 0.3s ease;
+    }
+
+    /* Improved Active States & Hover Effects */
+    .nav-links a:hover, 
+    .nav-links a.active {
+      color: var(--primary-blue);
+      background-color: rgba(0, 0, 255, 0.08);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 255, 0.12);
+    }
+
+    .nav-links a:hover i,
+    .nav-links a.active i {
+      transform: translateY(-2px);
+    }
+
+    .humberger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .humberger .bar {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-blue);
+      border-radius: 2px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* --- Hero Section --- */
+    .main-content-wrapper {
+      padding: 30px 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .hero-section {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .fixed-welcome-box {
+      flex: 1;
+    }
+
+    .fixed-welcome-box h1 {
+      font-size: 2.5rem;
+      color: var(--primary-blue);
+      font-weight: 800;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .fixed-welcome-box h1 span {
+      color: var(--primary-accent);
+    }
+
+    .fixed-welcome-box p {
+      color: var(--gray-text);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary-custom {
+      background-color: var(--primary-blue);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #0000cc;
+      color: #fff;
+    }
+
+    .carousel-container-custom {
+      flex: 1;
+      max-width: 550px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .carousel-item img {
+      height: 340px;
+      object-fit: cover;
+    }
+
+    /* --- Grid Stats Section --- */
+    .grid-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .grid-tiles {
+      padding: 30px 20px;
+      background-color: #ffffff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .grid-tiles:hover {
+      background-color: #f0f2ff;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 255, 0.1);
+    }
+
+    .grid-tiles h3 {
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .grid-tiles h3 .fa-solid {
+      color: var(--primary-blue);
+      font-size: 1.6rem;
+    }
+
+    .grid-tiles p {
+      color: var(--gray-text);
+      font-size: 1rem;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    /* --- Welcome Banner Section --- */
+    .welcome-wrapper {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 5%;
+    }
+
+    .wlcm-container {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(0, 0, 255, 0.95), rgba(0, 0, 180, 0.95));
+      border-radius: var(--border-radius);
+      padding: 40px;
+      gap: 40px;
+      color: #ffffff;
+      box-shadow: 0 8px 25px rgba(0,0,255,0.2);
+    }
+
+    .wlcm-img {
+      flex: 1;
+    }
+
+    .wlcm-img img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .wlcm-text {
+      flex: 1.2;
+    }
+
+    .wlcm-text h2 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .wlcm-text p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .wlcm-btn {
+      border-radius: 8px;
+      padding: 12px 24px;
+      border: none;
+      color: var(--primary-blue);
+      background-color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wlcm-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* --- Mission, Vision, Values --- */
+    .intro-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .intro-tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .intro-tile {
+      background-color: #ffffff;
+      padding: 35px 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .intro-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro-tile h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--dark-text);
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .intro-tile h3 .fa-solid {
+      color: var(--primary-blue);
+      font-size: 2rem;
+    }
+
+    .intro-tile p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    /* --- About Us Section --- */
+    .about-page {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 5%;
+    }
+
+    .about-card-main {
+      background: #ffffff;
+      border-radius: var(--border-radius);
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .about-wrapper h2 {
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .about-wrapper p.badge-subtitle {
+      font-size: 1.1rem;
+      color: var(--primary-blue);
+      padding: 6px 16px;
+      background-color: rgba(0, 0, 255, 0.06);
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .wrapper-details h3 {
+      font-size: 1.2rem;
+      color: var(--primary-blue);
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wrapper-details p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    /* --- Why Choose Us Bar --- */
+    .wrapper-more-about {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 5%;
+    }
+
+    .more-about-tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .more-about-tile {
+      background-color: #ffffff;
+      padding: 25px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      text-align: center;
+      border-top: 4px solid var(--primary-blue);
+    }
+
+    .more-about-tile h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .more-about-tile i {
+      color: var(--primary-blue);
+      font-size: 1.8rem;
+    }
+
+    /* --- Academics Section --- */
+    .academics-wrapper {
+      padding: 60px 5%;
+      background-color: #ffffff;
+      margin-top: 40px;
+    }
+
+    .academics-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .academics-container h3 {
+      font-size: 2.2rem;
+      color: var(--dark-text);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .academics-container h3 i {
+      color: var(--primary-blue);
+      margin-right: 10px;
+    }
+
+    .academics-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-text);
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+    }
+
+    .academics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+
+    .academic-card {
+      background: var(--light-bg);
+      padding: 35px 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .academic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      background-color: #ffffff;
+    }
+
+    .card-icon {
+      font-size: 2.3rem;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+    }
+
+    .academic-card h4 {
+      font-size: 1.3rem;
+      color: var(--dark-text);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .academic-card p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .card-link:hover {
+      color: #0000cc;
+    }
+
+    /* --- Contact Us Section --- */
+    .contact-wrapper {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 5%;
+    }
+
+    .contact-card-main {
+      background: #ffffff;
+      border-radius: var(--border-radius);
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header h2 {
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      color: var(--gray-text);
+      font-size: 1.05rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .contact-info-box {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .info-item i {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      background-color: rgba(0, 0, 255, 0.06);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .info-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--dark-text);
+    }
+
+    .info-item p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--dark-text);
+      font-size: 0.95rem;
+    }
+
+    .form-control-custom {
+      padding: 12px 16px;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-control-custom:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.1);
+    }
+
+    textarea.form-control-custom {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    /* --- Professional Footer --- */
+    .site-footer {
+      background-color: #11151c;
+      color: #ffffff;
+      padding: 60px 5% 20px 5%;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-col h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-col h4 span {
+      color: var(--primary-accent);
+    }
+
+    .footer-col p {
+      color: #a0aec0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links a i {
+      font-size: 0.8rem;
+      color: var(--primary-accent);
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .footer-socials a {
+      width: 38px;
+      height: 38px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--primary-blue);
+    }
+
+    .footer-bottom {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* --- Responsive Queries --- */
+    @media(max-width: 992px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .fixed-welcome-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .carousel-container-custom {
+        max-width: 100%;
+        width: 100%;
+      }
+      .wlcm-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .wlcm-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-details {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .humberger {
+        display: flex;
+      }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 20px;
+        display: none;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+        border-top: 1px solid #eee;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links li {
+        width: 100%;
+      }
+      .nav-links li a {
+        padding: 12px 15px;
+        width: 100%;
+      }
+      .humberger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .humberger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .humberger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+      .fixed-welcome-box h1 {
+        font-size: 2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container-fluid">
+  <!-- Navigation Bar -->
+  <div class="container-fluid-nav">
     <nav class="wrapper-navbar">
-      <div class="navbar p-0">
-        <div class="nav-brand">
-          <img src="images/logo.png" alt="">
-          <h4>St.Joseph Centenary <span>Ndeeba</span></h4>
-        </div>
+      <div class="nav-brand">
+        <img src="images/logo.png" alt="Logo">
+        <h4>St. Joseph Centenary <span>Ndeeba</span></h4>
       </div>
       <button class="humberger" aria-label="Toggle navigation">
         <span class="bar"></span>
@@ -26,185 +890,341 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="#" class="Active"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="#about"><i class="fa-solid fa-circle-info"></i> About</a></li>
-        <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a></li>
-        <li><a href="#"><i class="fa-solid fa-address-book"></i> Contact</a></li>
-        <li><a href="#"><i class="fa-solid fa-user-plus"></i> Register</a></li>
+        <li><a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#about" class="nav-item"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="#academics" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academics</a></li>
+        <li><a href="#contact" class="nav-item"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary btn-sm text-white px-3 py-2"><i class="fa-solid fa-user-plus text-white"></i> Register</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Main Content Wrapper with Fixed Welcome Text & Smaller Carousel Side-by-Side -->
-  <div class="main-content-wrapper">
+  <!-- Hero Section -->
+  <div class="main-content-wrapper" id="home">
     <div class="hero-section">
-      
-      <!-- Fixed Welcome Text Box (Does not change on slide change) -->
       <div class="fixed-welcome-box">
         <h1>Welcome to <span>St. Joseph Centenary</span></h1>
         <p>Empowering minds and shaping future leaders through excellence in education, discipline, and core values. Explore our programs and join our vibrant community today.</p>
-        <a href="#" class="btn-primary-custom"><i class="fa-solid fa-user-plus"></i> Register Now</a>
+        <a href="#contact" class="btn-primary-custom"><i class="fa-solid fa-user-plus"></i> Register Now</a>
       </div>
 
-      <!-- Smaller Styled Carousel -->
       <div class="carousel-container-custom">
-        <div id="carouselExampleAutoplaying" class="carousel slide  shadow-sm" data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/10.png" class="d-block w-100" alt="...">
+              <img src="images/10.png" class="d-block w-100" alt="Slide 1">
             </div>
             <div class="carousel-item">
-              <img src="images/2.png" class="d-block w-100" alt="...">
+              <img src="images/2.png" class="d-block w-100" alt="Slide 2">
             </div>
             <div class="carousel-item">
-              <img src="images/3.png" class="d-block w-100" alt="...">
+              <img src="images/3.png" class="d-block w-100" alt="Slide 3">
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
+  <!-- Stats Grid Section -->
   <section class="grid-wrapper">
     <div class="grid-container">
       <div class="grid-tiles">
-        <h3><i class="fa-solid fa-user"></i>  500+</h3>
+        <h3><i class="fa-solid fa-user"></i> 500+</h3>
         <p>Students Enrolled</p>
       </div>
       <div class="grid-tiles">
-        <h3><i class="fa-solid fa-trophy"></i></i>  10</h3>
+        <h3><i class="fa-solid fa-trophy"></i> 10</h3>
         <p>Years of Excellence</p>
       </div>
       <div class="grid-tiles">
-        <h3><i class="fa-solid fa-user-graduate"></i>  50</h3>
+        <h3><i class="fa-solid fa-user-graduate"></i> 50</h3>
         <p>Qualified Teachers</p>
       </div>
       <div class="grid-tiles">
-        <h3><i class="fa-solid fa-graduation-cap"></i>  A+</h3>
+        <h3><i class="fa-solid fa-graduation-cap"></i> A+</h3>
         <p>Academic Excellence</p>
       </div>
     </div>
   </section>
 
+  <!-- Welcome Banner Section -->
   <section class="welcome-wrapper">
     <div class="wlcm-container">
       <div class="wlcm-img">
         <img src="images/5.png" alt="Welcome Image">
       </div>
-      <div class="hr"></div>
       <div class="wlcm-text">
         <h2>St. Joseph Centenary SS Ndeeba</h2>
-        <p>Join our vibrant community and experience excellence in education.
-        We are committed to nurturing young minds, fostering creativity, and preparing students for a successful future. Explore our programs and discover the opportunities that await you at <strong>St. Joseph Centenary SS Ndeeba</strong>.
-        </p>
-        <button class="wlcm-btn"><i class="fa-solid fa-lightbulb"></i>  Learn More</button>
+        <p>Join our vibrant community and experience excellence in education. We are committed to nurturing young minds, fostering creativity, and preparing students for a successful future.</p>
+        <button class="wlcm-btn"><i class="fa-solid fa-lightbulb"></i> Learn More</button>
       </div>
     </div>
   </section>
 
+  <!-- Mission, Vision, Values Section -->
   <section class="intro-wrapper">
-    <div class="intro-container">
-      <ul class="intro-tiles">
-        <li class="intro-tile">
-          <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
-          <p>To provide quality education that fosters intellectual growth and moral development.</p>
-        </li>
-        <li class="intro-tile">
-          <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
-          <p>To be a leading educational institution that empowers students to become future leaders.</p>
-        </li>
-        <li class="intro-tile">
-          <h3><i class="fa-solid fa-heart"></i> Our Values</h3>
-          <p>Integrity, Excellence, Respect, and Community.</p>
-        </li>
-      </ul>
-    </div>
+    <ul class="intro-tiles">
+      <li class="intro-tile">
+        <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+        <p>To provide quality education that fosters intellectual growth and moral development.</p>
+      </li>
+      <li class="intro-tile">
+        <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
+        <p>To be a leading educational institution that empowers students to become future leaders.</p>
+      </li>
+      <li class="intro-tile">
+        <h3><i class="fa-solid fa-heart"></i> Our Values</h3>
+        <p>Integrity, Excellence, Respect, and Community.</p>
+      </li>
+    </ul>
   </section>
 
-  <section class="about-page Active" id="about">
-    <div class="about-wrapper">
-      <h2><i class="fa-solid fa-circle-info"></i> About Us</h2>
-      <hr>
-      <p>St. Joseph Centenary SS-Ndeeba</p>
-    </div>
-    <div class="about-container">
+  <!-- About Us Section -->
+  <section class="about-page" id="about">
+    <div class="about-card-main">
+      <div class="about-wrapper">
+        <h2><i class="fa-solid fa-circle-info"></i> About Us</h2>
+        <p class="badge-subtitle">St. Joseph Centenary SS-Ndeeba</p>
+      </div>
       <div class="about-details">
-        <div class="details">
+        <div class="details-list">
           <div class="wrapper-details">
-          <h3><i class="fa-solid fa-hand-holding-heart"></i> Our Story</h3>
-          <p>St. Joseph Centenary SS Ndeeba has a rich history of providing quality education to students in the region. Our commitment to academic excellence and holistic development has made us a trusted institution for generations.</p>
+            <h3><i class="fa-solid fa-hand-holding-heart"></i> Our Story</h3>
+            <p>A rich history of providing quality education, commitment to academic excellence, and holistic development.</p>
           </div>
           <div class="wrapper-details">
-          <h3><i class="fa-solid fa-book-open"></i> Our Programs</h3>
-          <p>We offer a wide range of academic programs designed to cater to the diverse needs of our students. From science and technology to arts and humanities, our curriculum is designed to foster critical thinking and creativity.</p>
+            <h3><i class="fa-solid fa-book-open"></i> Our Programs</h3>
+            <p>From science and technology to arts and humanities, our curriculum fosters critical thinking and creativity.</p>
           </div>
           <div class="wrapper-details">
-          <h3><i class="fa-solid fa-users"></i> Our Community</h3>
-          <p>At St. Joseph Centenary SS Ndeeba, we believe in building a strong sense of community among our students, staff, and parents. We encourage collaboration, respect, and active participation in school activities.</p>
+            <h3><i class="fa-solid fa-users"></i> Our Community</h3>
+            <p>Building a strong sense of collaboration, respect, and active participation among students, staff, and parents.</p>
           </div>
           <div class="wrapper-details">
-          <h3><i class="fa-solid fa-building"></i> Our Facilities</h3>
-          <p>Our campus is equipped with state-of-the-art facilities, including modern classrooms</p>
-          </div>
-          <div class="wrapper-details">
-          <h3><i class="fa-solid fa-user-tie"></i> Our Leadership</h3>
-          <p>Our leadership team is dedicated to ensuring that our school remains a place of learning, growth, and opportunity for all students. We are committed to maintaining high standards of education and fostering a positive learning environment.</p>
+            <h3><i class="fa-solid fa-building"></i> Our Facilities</h3>
+            <p>Our campus is equipped with state-of-the-art facilities, including modern classrooms and labs.</p>
           </div>
         </div>
-        <div class="hr"></div>
         <div class="about-img">
           <img src="images/6.png" alt="About Image">
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Highlights Bar Section -->
   <section class="wrapper-more-about">
-      <div class="more-about-tiles">
-        <div class="more-about-tile">
-          <h3><i class="fa-solid fa-circle-check"></i> Experienced Teachers</h3>
-        </div>
-        <div class="more-about-tile">
-          <h3><i class="fa-solid fa-circle-check"></i> Good Academic status</h3>
-        </div>
-        <div class="more-about-tile">
-          <h3><i class="fa-solid fa-circle-check"></i> Conducive Environment</h3>
-        </div>
-        <div class="more-about-tile">
-          <h3><i class="fa-solid fa-circle-check"></i> Professional Administration</h3>
-        </div>
-      </div>
+    <ul class="more-about-tiles">
+      <li class="more-about-tile">
+        <h3><i class="fa-solid fa-circle-check"></i> Experienced Teachers</h3>
+      </li>
+      <li class="more-about-tile">
+        <h3><i class="fa-solid fa-circle-check"></i> Good Academic Status</h3>
+      </li>
+      <li class="more-about-tile">
+        <h3><i class="fa-solid fa-circle-check"></i> Conducive Environment</h3>
+      </li>
+      <li class="more-about-tile">
+        <h3><i class="fa-solid fa-circle-check"></i> Professional Administration</h3>
+      </li>
+    </ul>
   </section>
-  <section class="academics-wrapper">
+
+  <!-- Academics Section -->
+  <section class="academics-wrapper" id="academics">
     <div class="academics-container">
-      <h3><i class="fa-solid fa-graduation-cap"></i>  Academics</h3>
-      <div class="academics-details">
-        <h3><i class="fa-solid fa-clipboard"></i> Academic Programs</h3>
-        <p>Explore our diverse range of academic programs designed to meet the needs of all students.</p>
+      <h3><i class="fa-solid fa-graduation-cap"></i> Academics</h3>
+      <p class="academics-subtitle">Discover our comprehensive curriculum designed to inspire, challenge, and empower students at every stage of their educational journey.</p>
+      
+      <div class="academics-grid">
+        <div class="academic-card">
+          <div class="card-icon"><i class="fa-solid fa-child-reaching"></i></div>
+          <h4>Elementary School</h4>
+          <p>Building a strong foundation in literacy, numeracy, and critical thinking through engaging, hands-on learning experiences.</p>
+          <a href="#elementary" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
 
-      </div>
-      <div class="academics-details">
-        <h3><i class="fa-solid fa-book"></i> Curriculum Overview
-        </h3>
-        <p>Our curriculum is designed to provide a well-rounded education that promotes critical thinking, creativity, and academic excellence.</p>
-      </div>
-      <div class="academics-details">
+        <div class="academic-card">
+          <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+          <h4>Middle School</h4>
+          <p>Fostering independence and curiosity through exploratory subjects, advanced coursework, and character development.</p>
+          <a href="#middle" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
 
-      </div>
-      <div class="academics-details">
-
+        <div class="academic-card">
+          <div class="card-icon"><i class="fa-solid fa-award"></i></div>
+          <h4>High School</h4>
+          <p>Preparing students for college and career success with rigorous coursework, skill development, and specialized pathways.</p>
+          <a href="#high" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Contact Us Section -->
+  <section class="contact-wrapper" id="contact">
+    <div class="contact-card-main">
+      <div class="contact-header">
+        <h2><i class="fa-solid fa-address-book"></i> Contact Us</h2>
+        <p>Get in touch with us for inquiries, admissions, or general information.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-box">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Our Location</h4>
+              <p>Ndeeba, Kampala, Uganda</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone Number</h4>
+              <p>+256 700 000000 / +256 770 000000</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email Address</h4>
+              <p>info@stjosephcentenary.ac.ug</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="text-danger">*</span></label>
+            <input type="text" id="fullName" name="fullName" class="form-control-custom" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="text-danger">*</span></label>
+            <input type="email" id="email" name="email" class="form-control-custom" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="text-danger">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-control-custom" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span class="text-danger">*</span></label>
+            <input type="text" id="subject" name="subject" class="form-control-custom" placeholder="What is this inquiry about?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="text-danger">*</span></label>
+            <textarea id="message" name="message" class="form-control-custom" placeholder="Type your message or questions here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary-custom justify-content-center">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>St. Joseph Centenary <span>Ndeeba</span></h4>
+        <p>Empowering minds and shaping future leaders through excellence in holistic education, discipline, and strong moral values.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#academics"><i class="fa-solid fa-chevron-right"></i> Academics</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Academic Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#academics"><i class="fa-solid fa-chevron-right"></i> Elementary School</a></li>
+          <li><a href="#academics"><i class="fa-solid fa-chevron-right"></i> Middle School</a></li>
+          <li><a href="#academics"><i class="fa-solid fa-chevron-right"></i> High School</a></li>
+          <li><a href="#academics"><i class="fa-solid fa-chevron-right"></i> Curriculum Overview</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i> Ndeeba, Kampala, UG</a></li>
+          <li><a href="#"><i class="fa-solid fa-phone"></i> +256 700 000000</a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i> info@stjosephcentenary.ac.ug</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 St. Joseph Centenary SS Ndeeba. All Rights Reserved.</p>
+      <p>Designed with Excellence &amp; Dedication | js.dev</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const humberger = document.querySelector('.humberger');
     const navLinks = document.querySelector('.nav-links');
 
-    humberger.addEventListener('click', ()=>{
+    humberger.addEventListener('click', () => {
       humberger.classList.toggle('active');
       navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        humberger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Intersection Observer to dynamically update the active state based on scroll position
+    const sections = document.querySelectorAll('div[id], section[id]');
+    const navItems = document.querySelectorAll('.nav-links .nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 120)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
     });
   </script>
 </body>

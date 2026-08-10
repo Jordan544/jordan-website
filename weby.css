@@ -667,3 +667,89 @@ body{
   padding: 20px 35px;
   color: #ffff;
 }
+.academics-wrapper {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.academics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academics-container h3 {
+  font-size: 2.2rem;
+  color: #1a252f;
+  margin-bottom: 15px;
+}
+
+.academics-container h3 i {
+  color: #3498db;
+  margin-right: 10px;
+}
+
+.academics-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.academics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.academic-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.academic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.academic-card h4 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.academic-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.card-link:hover {
+  color: #2980b9;
+}
