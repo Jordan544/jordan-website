@@ -245,14 +245,26 @@
       <p class="academics-subtitle">Take a visual tour of our campus grounds, facilities, academic spaces, and spiritual home.</p>
       
       <div class="gallery-grid">
-        <!-- Gallery Item 1 -->
-        <div class="gallery-card" onclick="openLightbox('images/10.png', 'Campus Grounds', 'Spacious and serene green environments designed for student relaxation and outdoor activities.')">
-          <div class="gallery-item">
-            <img src="images/7.png" alt="Campus Grounds">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
+        
+        <!-- Gallery Item 1: School Grounds -->
+        <div class="gallery-card">
+          <div id="groundsCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/7.png', 'School Grounds', 'Spacious and serene green environments designed for student relaxation.')">
+                <img src="images/7.png" class="d-block w-100" alt="Grounds 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/10.png', 'School Grounds - Sports Field', 'Our open fields used for football, athletics, and outdoor student activities.')">
+                <img src="images/10.png" class="d-block w-100" alt="Grounds 2">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#groundsCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#groundsCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
           <div class="gallery-caption">
             <h4>School Grounds</h4>
@@ -260,14 +272,25 @@
           </div>
         </div>
 
-        <!-- Gallery Item 2 -->
-        <div class="gallery-card" onclick="openLightbox('images/2.png', 'School Buildings', 'Modern, well-ventilated classroom blocks and administrative offices providing a conducive learning atmosphere.')">
-          <div class="gallery-item">
-            <img src="images/2.png" alt="School Buildings">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
+        <!-- Gallery Item 2: School Buildings -->
+        <div class="gallery-card">
+          <div id="buildingsCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/2.png', 'School Buildings', 'Modern, well-ventilated classroom blocks.')">
+                <img src="images/2.png" class="d-block w-100" alt="Buildings 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/6.png', 'Administration Block', 'Offices and administrative suites.')">
+                <img src="images/6.png" class="d-block w-100" alt="Buildings 2">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#buildingsCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#buildingsCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
           <div class="gallery-caption">
             <h4>School Buildings</h4>
@@ -275,14 +298,25 @@
           </div>
         </div>
 
-        <!-- Gallery Item 3 -->
-        <div class="gallery-card" onclick="openLightbox('images/3.png', 'Resourceful Library', 'A quiet, resourceful hub stocked with textbooks, research materials, and reading spaces for students.')">
-          <div class="gallery-item">
-            <img src="images/3.png" alt="Library">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
+        <!-- Gallery Item 3: Resourceful Library -->
+        <div class="gallery-card">
+          <div id="libraryCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/3.png', 'Our Library', 'A quiet, resourceful hub stocked with textbooks.')">
+                <img src="images/3.png" class="d-block w-100" alt="Library 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/3.png', 'Study Desks', 'Dedicated study areas for independent research.')">
+                <img src="images/3.png" class="d-block w-100" alt="Library 2">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#libraryCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#libraryCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
           <div class="gallery-caption">
             <h4>Our Library</h4>
@@ -290,59 +324,25 @@
           </div>
         </div>
 
-        <!-- Gallery Item 4 -->
-        <div class="gallery-card" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.')">
-          <div class="gallery-item">
-            <img src="images/5.png" alt="Computer Laboratory">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
+        <!-- Gallery Item 4: Computer Laboratory -->
+        <div class="gallery-card">
+          <div id="labCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers.')">
+                <img src="images/5.png" class="d-block w-100" alt="Lab 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/5.png', 'ICT Practical Sessions', 'Students actively engaging in digital literacy training.')">
+                <img src="images/5.png" class="d-block w-100" alt="Lab 2">
+              </div>
             </div>
-          </div>
-          <div class="gallery-caption">
-            <h4>Our Computer Laboratory</h4>
-            <p>Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.</p>
-          </div>
-        </div>
-
-
-        <div class="gallery-card" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.')">
-          <div class="gallery-item">
-            <img src="images/5.png" alt="Computer Laboratory">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
-            </div>
-          </div>
-          <div class="gallery-caption">
-            <h4>Our Staff</h4>
-            <p>Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.</p>
-          </div>
-        </div>
-      
-        <!-- Gallery Item -->
-        <div class="gallery-card" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.')">
-          <div class="gallery-item">
-            <img src="images/5.png" alt="Computer Laboratory">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
-            </div>
-          </div>
-          <div class="gallery-caption">
-            <h4>Co-curricullar activities</h4>
-            <p>Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.</p>
-          </div>
-        </div>
-      
-        <!-- Gallery Item -->
-        <div class="gallery-card" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.')">
-          <div class="gallery-item">
-            <img src="images/5.png" alt="Computer Laboratory">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#labCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#labCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
           <div class="gallery-caption">
             <h4>Computer Laboratory</h4>
@@ -350,20 +350,110 @@
           </div>
         </div>
 
-        <!-- Gallery Item 5 -->
-        <div class="gallery-card" onclick="openLightbox('images/6.png', 'Catholic Church', 'A peaceful spiritual sanctuary on campus dedicated to fostering moral values, prayer, and pastoral mentorship.')">
-          <div class="gallery-item">
-            <img src="images/6.png" alt="Catholic Church">
-            <div class="gallery-overlay">
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
-              <h4>View Full Size</h4>
+        <!-- Gallery Item 5: Our Staff -->
+        <div class="gallery-card">
+          <div id="staffCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/5.png', 'Our Staff', 'Dedicated administrative and teaching faculty.')">
+                <img src="images/5.png" class="d-block w-100" alt="Staff 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/5.png', 'Faculty Team', 'Professional administration members.')">
+                <img src="images/5.png" class="d-block w-100" alt="Staff 2">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#staffCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#staffCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="gallery-caption">
+            <h4>Our Staff</h4>
+            <p>Professional administration and dedicated teachers committed to student success.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 6: Co-curricular Activities -->
+        <div class="gallery-card">
+          <div id="coCurrCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/5.png', 'Co-curricular activities', 'Talent development and sports.')">
+                <img src="images/5.png" class="d-block w-100" alt="Activity 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/5.png', 'Music, Dance & Drama', 'Students performing on stage.')">
+                <img src="images/5.png" class="d-block w-100" alt="Activity 2">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#coCurrCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#coCurrCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="gallery-caption">
+            <h4>Co-curricular activities</h4>
+            <p>Engaging students in sports, music, debate, and club activities to build teamwork and holistic talents.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 7: Additional Computer Laboratory -->
+        <div class="gallery-card">
+          <div id="extraLabCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/5.png', 'Computer Laboratory', 'Equipped with modern computers.')">
+                <img src="images/5.png" class="d-block w-100" alt="Extra Lab 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/5.png', 'Advanced ICT Center', 'High-speed internet access.')">
+                <img src="images/5.png" class="d-block w-100" alt="Extra Lab 2">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#extraLabCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#extraLabCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="gallery-caption">
+            <h4>Computer Laboratory</h4>
+            <p>Equipped with modern computers and high-speed internet to foster hands-on digital literacy and ICT skills.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 8: Holy Mass -->
+        <div class="gallery-card">
+          <div id="churchCarousel" class="carousel slide gallery-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" onclick="openLightbox('images/6.png', 'Catholic Church', 'A peaceful spiritual sanctuary.')">
+                <img src="images/6.png" class="d-block w-100" alt="Church 1">
+              </div>
+              <div class="carousel-item" onclick="openLightbox('images/2.png', 'Holy Mass & Worship', 'Moral values and pastoral mentorship.')">
+                <img src="images/2.png" class="d-block w-100" alt="Church 2">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#churchCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#churchCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
           <div class="gallery-caption">
             <h4>Holy Mass</h4>
             <p>A peaceful spiritual sanctuary on campus dedicated to fostering moral values, prayer, and pastoral mentorship.</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
