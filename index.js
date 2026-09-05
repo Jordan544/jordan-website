@@ -1,3 +1,5 @@
+
+    // Mobile Hamburger Toggle
     const humberger = document.querySelector('.humberger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -21,7 +23,7 @@
       });
     });
 
-
+    // Accurate Scrollspy active class on navigation
     const sections = document.querySelectorAll('section[id], div[id="home"]');
     const navItems = document.querySelectorAll('.nav-links .nav-item');
 
@@ -45,7 +47,7 @@
       });
     });
 
-//animation reveal on scroll
+    // JavaScript Scroll-Reveal Animation for details/cards as user scrolls
     const revealElements = document.querySelectorAll(
       '.academic-card, .grid-tiles, .intro-tile, .gallery-card, .about-card-main, .contact-card-main, .wlcm-container'
     );
